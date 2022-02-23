@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 
 public class Main {
-
     public static void main(String[] args) {
         person person = new person();
 
@@ -12,12 +11,13 @@ public class Main {
         person.pol = inpol.nextLine();
 
         Scanner inrost = new Scanner(System.in);
-        System.out.print("Input your Height: ");
-        person.rost = inrost.nextInt();
+        System.out.print("Input your Height in meters: ");
+        person.rost = inrost.nextDouble();
 
         Scanner inves = new Scanner(System.in);
         System.out.print("Input your weight: ");
-        person.ves = inves.nextInt();
+        person.ves = inves.nextDouble();
+
 
 
 
@@ -30,10 +30,10 @@ public class Main {
         String female = "female";
         String Female = "Female";
 
-        int maleaverost = 175;
-        int feaverost = 162;
-        int maleaveves = 80;
-        int feaveves = 62;
+        double maleaverost = 1.75;
+        double feaverost = 1.62;
+        double maleaveves = 80;
+        double feaveves = 62;
 
         int malerostrus = 178;
         int malerostind = 165;
@@ -131,10 +131,23 @@ public class Main {
 
             }
         }
-
-
         System.out.println(person.pol);
         System.out.println(person.rost);
+        double bmi = person.ves/(person.rost*person.rost);
+        if (bmi<18.5)
+            System.out.println("Your BMI is "+ bmi + ", you are under weight");
+        if (bmi>18.5 & bmi<25)
+            System.out.println("Your BMI is "+ bmi + ", you have normal weight");
+        if (bmi>25 & bmi<30)
+            System.out.println("Your BMI is "+ bmi + ", you are over weight");
+        if (bmi>29.9 & bmi<35)
+            System.out.println("Your BMI is "+ bmi + ", you have obese:class I");
+        if (bmi>34.9 & bmi<40)
+            System.out.println("Your BMI is "+ bmi + ", you have obese:class II");
+        if (bmi>39.9)
+            System.out.println("Your BMI is "+ bmi + ", you have obese:class III");
+
+
 
     }
 }
