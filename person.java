@@ -2,7 +2,7 @@ package com.company;
 
 public class person {
     String pol;
-    int rost;
-    int ves;
+    double rost;
+    double ves;
 
 }
