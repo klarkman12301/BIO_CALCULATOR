@@ -9,7 +9,7 @@ public class Main {
         Scanner inpol = new Scanner(System.in);
         System.out.print("Input your Sex: ");
         person.pol = inpol.nextLine();
-
+//scanner function is needed to read the input and use that information
         Scanner inrost = new Scanner(System.in);
         System.out.print("Input your Height in meters: ");
         person.rost = inrost.nextDouble();
@@ -20,7 +20,7 @@ public class Main {
 
 
 
-
+//making different possible variants of input
         String man = "man";
         String Man = "Man";
         String male = "male";
@@ -29,12 +29,12 @@ public class Main {
         String Woman = "Woman";
         String female = "female";
         String Female = "Female";
-
+//making variables for average height in the whole world
         double maleaverost = 1.75;
         double feaverost = 1.62;
         double maleaveves = 80;
         double feaveves = 62;
-
+//making variables for average males' height in different contries
         int malerostrus = 178;
         int malerostind = 165;
         int malerostcan = 176;
@@ -47,7 +47,7 @@ public class Main {
         int malerostukorea = 174;
         int malerostgerman = 173;
         int malerostjapan = 172;
-
+//making variables for average females' height in different contries
         int ferostrus = 166;
         int ferostind = 152;
         int ferostcanada = 162;
@@ -60,7 +60,7 @@ public class Main {
         int ferostukorea = 161;
         int ferostgerman = 164;
         int ferostjapan = 158;
-
+//equate variables
         if(person.pol.equals(woman))
             person.pol = woman;
         if(person.pol.equals(Woman))
@@ -80,18 +80,21 @@ public class Main {
             person.pol = man;
 
 
-
+//output if you are taller than the average man on earth
         if(person.pol == man){
             if(person.rost > maleaverost){
                 System.out.println("You are taller than the average man on earth");
             }
+            //output if you are of average height
             if (person.rost == maleaverost) {
                 System.out.println("you are of average height");
             }
+            //output if you are lower than the average man on earth
             if (person.rost < maleaverost){
                 System.out.println("You are lower than the average man on earth");
             }
         }
+        //same for females' average height
         if (person.pol == woman){
             if (person.rost > feaverost){
                 System.out.println("You are taller than the average woman on earth");
@@ -103,6 +106,7 @@ public class Main {
                 System.out.println("You are lower than the average woman on earth");
             }
         }
+        //simmilar output to previous but now with weight 
         if(person.pol == man) {
             if (person.ves > maleaveves) {
                 System.out.println("your weight is bigger than average weight of man on earth ");
@@ -133,6 +137,7 @@ public class Main {
         }
         System.out.println(person.pol);
         System.out.println(person.rost);
+        //making bmi calculator with using special formula: weight divided by height squared
         double bmi = person.ves/(person.rost*person.rost);
         if (bmi<18.5)
             System.out.println("Your BMI is "+ bmi + ", you are under weight");
